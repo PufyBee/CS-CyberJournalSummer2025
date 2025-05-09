@@ -1,0 +1,1 @@
+This repo will keep track of a wide array of projects, notes, reflections, and simple tools as I progress. It is meant to be a collection, and representation of my prowess in these reigons, and a journal for myself to document and look back on, in future time. 
