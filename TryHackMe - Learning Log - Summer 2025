@@ -1,0 +1,105 @@
+This file will iterate on my day-by-day experience using TryHackMe, to further my knowledge in the Cybersecurity field of knowledge. 
+
+
+
+
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#May 9, 2025: Room: Introduction to Cybersecurity
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+##Offensive Security Intro: 
+
+Key Takeaways: Websites can be exploited using Gobuster to reveal secret pages, which can then be logged into and exploited.
+
+Notes: 
+Offensive Security: Practicing methods commonly used by hackers to better understand their methods and defend against them. 
+Gobuster: Command Line Application used to brute force websites and find hidden directories/pages
+-u: Used to state the website we're scanning, -w: Takes a list of words to iterate through in order to find hidden pages
+Status(name) indicates the pages/directories that exist on the website, e.g, 200, 204, 301, 302, 307, 403, in our example terminal
+Using this, we can determine that there exists a page "/bank-transfer" that exists, such that I can log onto it, and transfer money from a different account to mine.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+##Defensive Security Intro: 
+
+Key Takeaways: Multiple Veins of Defensive Security: Common tactics are employed to ensure nothing is vulnerable. In the case it is, though, measures are implemented to mitigate the damage and prevent it from occurring again. 
+
+Notes:
+Defensive Security: Counterpart to offensive security, a method that aims to prevent intrusions from occurring, detect intrusions when they occur, and deal with them as needed.
+Blue Teams: Teams that are part of the defensive security landscape
+Focus: Updating and patching systems, setting up preventative security devices, and IPS*
+IPS: Intrusion Prevention Systems (IPS) is a device/application that detects and stops intrusion attempts proactively. Typically deployed in front of the protected asset to block a threat from reaching its target. 
+Areas: Security Operations Center (SOC), Threat Intelligence, Digital Forensics and Incident Response (DFIR), and Malware Analysis
+Security Operations Center (SOC): A Team of cyber professionals that monitors the network and systems to detect malicious events, with a particular interest includes Vulnerabilities, Policy Violations, Unauthorized activity, and network intrusions.
+Threat Intelligence: In this context, it refers to information gathered about potential enemies. A threat constitutes any action that can negatively affect a system
+Digital Forensics and Incident Response (DFIR): Application of science to investigate crimes, and then establish facts, focuses on various areas spanning: File System, System Memory, System Logs, and Network Logs. 
+Incident Response: Refers to a data breach / cyber attack, but can be less severe, constituting a misconfiguration or policy violation.
+Phases of the incident response process:
+1. Preparation: The Team prepares and readies itself for incidents, and multiple preventative measures are employed
+2. Detection and Analysis: The team has the necessary resources to detect any incident
+3. Containment, Eradication, and Recovery: Upon an incident being detected, it is mitigated, and then systems are recovered
+4. Post-incident Activity: Reports are made, and future methods are employed to prevent something similar from occurring again. 
+Malware: Stands for malicious software, spanning a piece of code, a  Trojan horse, or ransomware. 
+Ransomware: Encrypts users' files, demanding money for the key, hence the term "ransom"
+Static Analysis: Inspecting a malicious program without actually running it requires knowledge of assembly language
+Dynamic Analysis: Running the malware in a controlled environment and monitoring its behavior
+SIEM: Security Information and Event Management System, which is used to determine if something nefarious is occurring, or it is simply user error, like multiple failed login attempts.
+Simulation:
+Sketchy connection attempt from IP 143.110.250.149 on port 22
+Checking the IP address, the ISP is China Mobile Communications Corporation, and we're confident this is a Malicious attempt
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+##Careers in Cyber:
+
+Key Takeaways: Wide array of roles in the industry, some have more passive roles like the Analyst, whereas others like the Penetration tester ethically hack the system in efforts to tes the defense. 
+
+Notes: 
+Security Analyst: Responsible for working with stakeholders to analyse the security throughout the company, compiling reports, and developing security plans through trends.
+Security Engineer: Tests and screens security measures across various software, monitors networks, and reports to update the system and mitigate vulnerabilities.
+Incident Responder: Respond productively and efficiently to security breaches. Primary focus includes creating plans, policies, and protocols to enact when something goes haywire or an attack occurs. Uses MTTD, MTTA, and MTTR: The mean time to detect, acknowledge, and recover from attacks.
+Digital Forensics Examiner: Acts as a detective of sorts, collecting and analyzing evidence to solve crimes, charging the guilty and exonerating the innocent. 
+Malware Analyst: Analysing suspicious programs, discovering their purpose, and writing reports of their findings. May use static or dynamic analysis of malware samples by observing their activities in controlled environments. 
+Penetration Tester: Responsible for testing technology products for loopholes. Most well-known as ethical hacking, a tester will conduct tests on computer systems, perform security assessments, and evaluate and report on insights. 
+Red Teamer: A more targeted version of a penetration tester, they work as the hacker, providing insight from the enemy's perspective. 
+=================================================================================================================================================================================================================================================================================================================================================================================
+=================================================================================================================================================================================================================================================================================================================================================================================
+=================================================================================================================================================================================================================================================================================================================================================================================
+=================================================================================================================================================================================================================================================================================================================================================================================
+#Room: Pre-Security:
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+##What is Networking?:
+
+Key Takeaways: Networks are the fundamental makeup of what constitutes the internet, and all that exists on it
+
+Notes: 
+Networks: Connected things, such as a friend group, connected by similar interests, ideals, goals, or paths, exemplified by a wide array of things
+Networks (In the context of computing): The connection between two or more devices, integrated into everyday life.
+Internet: A gigantic network, consisting of many small networks within it. Created by Tim Berners-Lee (World Wide Web or WWW). Essentially, multiple networks are  connected to the internet, connecting more networks.
+Private Network: A Small network, comprising a small area like a house or company
+Public Network: Large network, comprising a wide area.
+Communication: Devices must both be identifiable and have the capability to identify others
+Identification Methods: An IP Address, and a Media Access Control (MAC) Address - Similar to a serial number
+IP Address: Used to identify a host on a network for a period of time, comprised of 4 octets: 192.168.1.1
+Octet #1: 192 (typically static)
+Octet #2: 168 (typically static) 
+Octet #3: 1
+Octet #4: 1
+All of these together comprise the IP Address or (Street Address) for a real-world analogy.
+More than one IP address of the same value cannot be active at the same time, but they can, however, change.
+IPv6: Newer, more daunting version of the internet, still hasn't been implemented fully, has (340 trillion-plus) addresses compared to the 2^32 (4.29 billion) boasted by IPV4.
+MAC Address: Refers to 'Burnt in', the MAC address is a sixteen-character hexadecimal number (a base sixteen numbering system used in computing to represent numbers) split into two and separated by a colon: a4:c3:f0:85:ac:2d
+Spoofing: MAC addresses can be spoofed, where a device pretends to be another using a MAC address. When this occurs, it can break poorly implemented security designs that assume devices talking on a network are 'trustworthy'.
+Ping: One of the most fundamental network tools we use. Uses ICMP (Internet Control Message Protocol), extremely effective at using to determining performance or time to talk to a device is extremely good. 
+Syntax: ping (ip address or website) - time is reported - time 5008ms, shows how many packets are received and lost with a percentage.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+##Intro to LAN:
+
+Ring Topology: Packets of data travel from one device to the next until they have reached their final destination. Very basic, and if one connection is lost, ALL connections are lost, very poor design. 
+Bus Topology: All devices are connected to a single cable, often referred to as the Backbone. Data is sent in both left and right directions down the backbone until the packet's destination is reached. One major flaw is that it cannot handle an influx of data. 
+Star Topology: All devices are connected with their cable to a central switch/hub. All packets are forwarded through the switching, meaning if the switch goes down, so does the network. 
+Switch: Dedicated devices within a network that are designed to aggregate multiple other devices, such as computers, printers, or any other networking device using Ethernet. Multiple devices plug into a switch port. These can be found in large locations such as schools or businesses.
+Router: A router is responsible for connecting networks and passing data between them, using routing (wow!). A path is created between networks so data can be successfully delivered. Very useful when connected through multiple paths. 
+
+
+
+
+ 
