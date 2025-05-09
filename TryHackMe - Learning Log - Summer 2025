@@ -1,11 +1,5 @@
 This file will iterate on my day-by-day experience using TryHackMe, to further my knowledge in the Cybersecurity field of knowledge. 
 
-
-
-
-
-
-
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #May 9, 2025: Room: Introduction to Cybersecurity
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -98,6 +92,22 @@ Bus Topology: All devices are connected to a single cable, often referred to as 
 Star Topology: All devices are connected with their cable to a central switch/hub. All packets are forwarded through the switching, meaning if the switch goes down, so does the network. 
 Switch: Dedicated devices within a network that are designed to aggregate multiple other devices, such as computers, printers, or any other networking device using Ethernet. Multiple devices plug into a switch port. These can be found in large locations such as schools or businesses.
 Router: A router is responsible for connecting networks and passing data between them, using routing (wow!). A path is created between networks so data can be successfully delivered. Very useful when connected through multiple paths. 
+Subnetting: Splitting up a network into multiple areas, like sharing a cake by slices, or practically splitting a network between Accounting, Human Resources, and Finance. 
+Subnetting in Practice: Achieved by splitting the IP into multiple areas, using the Subnet Mask
+Three methods: 
+Identify the Network Address: Identifies the start of the actual network, used to identify a network's existence
+Identify the Host Address: IP address used to identify a particular device on the subnet. A device could have a network address of 192.168.1.10
+Identify the Default Gateway (Router): The mode of sending information out to another network, implemented through a router. Typically manifests as .1, or .254. Think of it like the only door in a building to the outside world.
+Subnetting is paramount for places like Businesses, when 254+ devices exist in the same area. 
+ARP Protocol (Address Resolution Protocol): Allows an Address to associate its MAC address with an IP address on a network.
+Analogy for ARP: I need an IP for this MAC! Then somebody who hears you gives you an IP that corresponds to your MAC address, and this is then stored in a cache to remember forever.
+DHCP (Dynamic Host Configuration Protocol): A Dynamic method used to establish an IP Address
+Steps of DHCP: 
+DHCP Discover: Like stating your presence and asking if anyone can give me an IP address?
+DHCP Offer: Responder mentions you can have IP x.x.x.x
+DHCP Request: Formally requests for IP x.x.x.x
+DHCP ACK: Finally the device offering says okay cool, here's the IP Address
+
 
 
 
